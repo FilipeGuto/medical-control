@@ -1,5 +1,13 @@
-const db = require('../models/connect');
+const { getAllClients } = require('../models/client-models');
 
-module.export = {
+const serviceAllClients = async () => {
+  const clients = await getAllClients();
 
+  console.log("CHEGA ==>", clients);
+
+  return clients;
+};
+
+module.exports = {
+  serviceAllClients,
 };
